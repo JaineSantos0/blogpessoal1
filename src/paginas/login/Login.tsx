@@ -9,7 +9,7 @@ function Login() {
             <Grid alignItems={'center'} xs={6}>
                 <Box paddingX={20}>
                     <form>
-                        <Typography variant="h3" gutterBottom color="#AB5A42" component="h3" align="center" style={{fontWeight:'bold'}} className='textos1'>Entrar</Typography>
+                        <Typography variant="h3" gutterBottom component="h3" align="center" style={{fontWeight:'bold'}} className='textos1'>Entrar</Typography>
                         <TextField id={'usuario'} label="usuário" variant="outlined" name="usuario" margin="normal" fullWidth ></TextField>
                         <TextField id={'senha'} label="senha" variant="outlined" name="senha" margin="normal" type="password" fullWidth ></TextField>
                         <Box marginTop={2} textAlign={'center'}>
