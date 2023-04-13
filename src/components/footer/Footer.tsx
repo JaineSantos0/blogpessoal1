@@ -9,28 +9,28 @@ import { Typography } from "@mui/material";
 function Footer() {
     return(
         <>
-            <Grid container direction="row" justifyContent="center" alignItems="center" className="footer">
+            <Grid container direction="row" justifyContent="center" alignItems="center" className="footer" style={{backgroundColor:'#272A53'}}>
                 <Grid>
-                    <Box style={{height: '20vh'}} padding={'10px'}>
+                    <Box style={{height: '22vh'}} paddingTop={'10px'}>
                         <Box>
-                            <Box paddingBottom={'20px'}>
-                            <Typography variant='subtitle2' align= 'center' gutterBottom style={{color: 'white'}}>Siga-me nas redes sociais:</Typography>
+                            <Box paddingBottom={'10px'}>
+                            <Typography variant='subtitle2' align= 'center' gutterBottom style={{color: 'white', fontSize: 15}}>Siga-me nas redes sociais:</Typography>
                                 <Box display={'flex'} justifyContent="center" alignItems="center" paddingTop={'15px'} >
                                     <Box>
                                         <a href="https://github.com/JaineSantos0"></a>
-                                        <GitHubIcon style={{ fontSize: 60, color: "white", height: "40px"}}/>
+                                        <GitHubIcon style={{ fontSize: 50, color: "white", height: "40px"}}/>
                                     </Box>
                                     <Box>
                                         <a href="https://www.linkedin.com/in/jainejosiane/"></a>
-                                        <LinkedinIcon style={{ fontSize: 60, color: "white", height: "40px"}}/>
+                                        <LinkedinIcon style={{ fontSize: 50, color: "white", height: "40px"}}/>
                                     </Box>
                                 </Box>
                             </Box>
                         </Box>
-                        <Box>
-                            <Typography variant='subtitle2' align= 'center' gutterBottom style={{color: 'white'}}>@ 2020 Copyright</Typography>
+                            <Box justifyContent={'sp'}>
+                            <Typography variant='subtitle2' align= 'center' gutterBottom style={{color: 'white'}}>@2023 Copyright</Typography>
+                            </Box>
                         </Box>
-                    </Box>
                 </Grid>
             </Grid>
         </>

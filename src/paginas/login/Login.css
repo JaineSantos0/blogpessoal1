@@ -1,0 +1,24 @@
+.textos1{
+    font-weight: bold !important;
+ }
+ 
+ .imagem{
+     background-image: url(./../../assets/903ce82d065d12a760eeafe2aec9935a.jpg);
+     background-repeat: no-repeat;
+     width: 100vh;
+     min-height: 100vh;
+     background-size: cover;
+     background-position: center;
+ }
+
+ .button {
+    color: white !important;
+ }
+ 
+ .text-decorator-none{
+     text-decoration: none;
+ }
+
+ .fundo {
+    background-color:#BDD0E9;
+ }

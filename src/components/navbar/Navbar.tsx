@@ -6,13 +6,14 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import {Link} from 'react-router-dom'
 import './Navbar.css'
 
 function Navbar() {
     return(
         <>
             <AppBar position="static">
-                <Box sx={{ flexGrow: 1 }}>
+                <Box sx={{ flexGrow: 1 }} style={{backgroundColor:'#272A53'}}>
                 <Toolbar>
                     <IconButton
                         size="large"
@@ -42,9 +43,20 @@ function Navbar() {
                                 Tema
                             </Typography>
                         </Box>
+                        <Box mx={1} style={{cursor: "pointer"}}>
+                            <Typography variant="h6" color={"inherit"}>
+                                Cadastrar Tema
+                            </Typography>
+                        </Box>
                     </Box>
-                    <Button color="inherit">Login</Button>
-                </Toolbar>
+                        <Link to='/login' className='text-decorator-none'>
+                            <Box mx={1} className='cursor' paddingLeft={'5px'}>
+                                <Typography variant="h6" color="white">
+                                    logout
+                                </Typography>
+                            </Box>
+                        </Link>
+                </Toolbar>  
                 </Box>
             </AppBar>
         </>
