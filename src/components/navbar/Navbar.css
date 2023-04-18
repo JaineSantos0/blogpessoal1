@@ -1,3 +1,11 @@
 .text-decoration-none {
     text-decoration: none;
 }
+
+.icon {
+    background-image: url('https://ik.imagekit.io/wvdiy3mbn/blog-pessoal/iconnavbar.png?updatedAt=1681846078034');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 12vh;
+    width: 6vw;
+}

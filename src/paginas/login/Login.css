@@ -1,9 +1,5 @@
-.textos1{
-    font-weight: bold !important;
- }
- 
- .imagem{
-     background-image: url(./../../assets/903ce82d065d12a760eeafe2aec9935a.jpg);
+.imagem{
+     background-image: url('https://ik.imagekit.io/wvdiy3mbn/blog-pessoal/login.jpg?updatedAt=1681846031266');
      background-repeat: no-repeat;
      width: 100vh;
      min-height: 100vh;
@@ -11,14 +7,10 @@
      background-position: center;
  }
 
- .button {
-    color: white !important;
- }
- 
- .text-decorator-none{
-     text-decoration: none;
+ .buttonlogin {
+    background-color: #ef6c00 !important;
  }
 
- .fundo {
-    background-color:#BDD0E9;
- }
+ .fundologin {
+    background-color: #ffecb3 !important;
+}

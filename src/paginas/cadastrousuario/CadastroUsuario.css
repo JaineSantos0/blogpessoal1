@@ -1,0 +1,14 @@
+.imagem{
+    background-image: url('https://ik.imagekit.io/wvdiy3mbn/blog-pessoal/cadastro.jpg?updatedAt=1681846030512');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.button {
+    background-color: purple !important;
+    gap: 2px;
+}
+
+.fundocadastro {
+    background-color: #c5cae9 !important;
+}

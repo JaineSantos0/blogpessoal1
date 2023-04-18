@@ -11,7 +11,7 @@ function Footer() {
         <>
             <Grid container direction="row" justifyContent="center" alignItems="center" className="footer" style={{backgroundColor:'#272A53'}}>
                 <Grid>
-                    <Box style={{height: '22vh'}} paddingTop={'10px'}>
+                    <Box paddingTop={'10px'}>
                         <Box>
                             <Box paddingBottom={'10px'}>
                             <Typography variant='subtitle2' align= 'center' gutterBottom style={{color: 'white', fontSize: 15}}>Siga-me nas redes sociais:</Typography>
