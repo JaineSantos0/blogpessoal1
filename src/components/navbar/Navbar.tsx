@@ -12,22 +12,15 @@ import './Navbar.css'
 function Navbar() {
     return(
         <>
-            <AppBar position="static">
-                <Box sx={{ flexGrow: 1 }} style={{backgroundColor:'#272A53'}}>
-                <Toolbar>
-                    <IconButton
-                        size="large"
-                        edge="start"
-                        color="inherit"
-                        aria-label="menu"
-                        sx={{ mr: 2 }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                    Blog Pessoal
-                    </Typography>
-                    <Box display= "flex">
+            <AppBar>
+                <Box sx={{ flexGrow: 1 }} style={{backgroundColor:'#272A53'}} paddingX={5} display={'flex'} justifyContent={'space-between'} alignItems={'center'}>
+                    <Box>
+                        <Box></Box>
+                        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                             Blog Pessoal
+                        </Typography>
+                    </Box>
+                    <Box display= "flex" gap={10}>
                         <Box mx={1} style={{cursor: "pointer"}}>
                             <Typography variant="h6">
                                 Home
@@ -45,7 +38,7 @@ function Navbar() {
                         </Box>
                         <Box mx={1} style={{cursor: "pointer"}}>
                             <Typography variant="h6" color={"inherit"}>
-                                Cadastrar Tema
+                                Cadastrar tema
                             </Typography>
                         </Box>
                     </Box>
@@ -56,7 +49,6 @@ function Navbar() {
                                 </Typography>
                             </Box>
                         </Link>
-                </Toolbar>  
                 </Box>
             </AppBar>
         </>
