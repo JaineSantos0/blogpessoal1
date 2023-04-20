@@ -2,6 +2,7 @@ import React from 'react'
 import Grid from '@material-ui/core/Grid/Grid'
 import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
+import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem';
 import Button from '@mui/material/Button';
 import './Home.css';
 
@@ -20,6 +21,11 @@ function Home() {
                         <Button variant='outlined' className='button'>ver postagens</Button>
                     </Box>
                 </Box>
+            </Grid>
+            <Grid xs={12} className='postagens'>
+                <div>
+                  <TabPostagem />
+                </div>
             </Grid>
         </>
     )

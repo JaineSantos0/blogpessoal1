@@ -15,8 +15,8 @@ function Navbar() {
             <AppBar position='static'>
                 <Box sx={{ flexGrow: 1 }} style={{backgroundColor:'#272A53'}} paddingX={5} height={'10vh'} width={'100%'} display={'flex'} justifyContent={'space-between'} alignItems={'center'}>
                     <Box display={'flex'}>
-                        <Box className='icon'></Box>
-                        <Box  m={2} ><Typography variant="h6">Blog de Animes</Typography></Box>
+                        <Box  className='icon'></Box>
+                        <Box m={1}><Typography variant="h6">Blog de Animes</Typography></Box>
                     </Box>
                     <Box display= "flex" gap={10}>
                         <Box mx={1} style={{cursor: "pointer"}}>
