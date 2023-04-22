@@ -43,7 +43,7 @@ function CadastroUsuario() {
     if (confirmarSenha === usuario.senha) {
       try {
         await cadastrarUsuario(
-          "/usuarios/cadastrar",
+          "/cadastroUsuario",
           usuario,
           setUsuarioResult
         );

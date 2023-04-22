@@ -7,4 +7,6 @@
 .button {
     background-color: blueviolet !important;
     color: white !important;
+    padding: 5px !important;
+    border-radius: 5px !important;
 }

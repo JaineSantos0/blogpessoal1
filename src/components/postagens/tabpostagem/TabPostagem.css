@@ -1,3 +1,8 @@
-.titulo{
-    font-weight: bold;
+.titulo {
+    font-weight: bold !important;
+    color: orangered !important;
+ }
+
+ .subtitulo {
+    color: midnightblue !important;
  }

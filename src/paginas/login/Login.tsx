@@ -96,7 +96,7 @@ function Login() {
             <Box marginRight={1}>
               <Typography marginTop={2} align="center" variant="body1">
                 Ainda não tem uma conta?{" "}
-                <Link to="/usuarios/cadastrar" style={{color:'#ef5350', font:'bold'}}>
+                <Link to="/cadastroUsuario" style={{color:'#ef5350', font:'bold'}}>
                   Cadastre-se aqui
                 </Link>
               </Typography>

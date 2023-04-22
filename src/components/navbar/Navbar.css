@@ -1,5 +1,5 @@
 .text-decoration-none {
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 .icon {
@@ -8,4 +8,8 @@
     background-size: cover;
     height: 7vh;
     width: 4vw;
+}
+
+.logout-cursor {
+    cursor: pointer;
 }
