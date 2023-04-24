@@ -40,13 +40,13 @@ function CadastroUsuario() {
 
   async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (confirmarSenha === usuario.senha) {
+    if (confirmarSenha === usuario.senha && usuario.senha.length > 8) {
       try {
         await cadastrarUsuario(
-          "/cadastroUsuario",
+          "/usuarios/cadastrar",
           usuario,
           setUsuarioResult
-        );
+        )
         alert("Usuário cadastrado com sucesso");
       } catch (error) {
         alert("Por favor, verifique os campos");

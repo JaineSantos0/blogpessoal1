@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
 import { Tema } from "../../../models/Tema";
 import { getById, post, put } from "../../../service/Service";
-import { Button, Typography, TextField, Grid} from "@mui/material";
+import { Button, Typography, TextField, Grid, Box} from "@mui/material";
 import './CadastroTema.css'
 
 function CadastroTema() {
@@ -53,14 +53,14 @@ async function findById(id: string) {
 
         if (id !== undefined) {
             console.log(tema)
-            await put(`/temas`, tema, setTema, {
+            await put('/temas', tema, setTema, {
                 headers: {
                     'Authorization': token
                 }
             })
             alert('Tema atualizado com sucesso');
         } else {
-           post(`/temas`, tema, setTema, {
+           post('/temas', tema, setTema, {
                 headers: {
                     'Authorization': token
                 }
@@ -78,24 +78,28 @@ async function findById(id: string) {
 
   return (
     <Grid
-      container
-      direction="row"
-      justifyContent={"center"}
-      alignItems={"center"}
-      className="fundologin"
-    >
-      <Grid alignItems={"center"} xs={12}>
-        <Typography component={"h2"} variant="h2">
+    container
+    direction="row"
+    justifyContent={"center"}
+    alignItems={"center"} className="fundo-tema"
+  >
+    <Grid alignItems={"center"} xs={6}>
+      <Box textAlign={'center'} >
+          <Typography component={"h2"} variant="h2">
           {tema.id !== 0 ? 'Editar tema' : 'Cadastrar tema'}
-        </Typography>
+          </Typography>
         <form onSubmit={onSubmit}>
-          <TextField  label="Descrição do tema" name="descricao" value={tema.descricao} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedTema(event)} />
-          <Button type="submit" variant="contained">
+          <TextField className="input-tema" label="Descrição do tema" name="descricao" value={tema.descricao} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedTema(event)} />
+          <Box marginTop={2} textAlign={"center"}>
+          <Button type="submit" variant="contained" className="button-tema">
             {tema.id !== 0 ? 'Atualizar' : 'Cadastrar'}
           </Button>
+          </Box>
         </form>
-      </Grid>
+      </Box>
     </Grid>
+    <Grid xs={6} className="imagem-tema"></Grid>
+  </Grid>
   );
 }
 

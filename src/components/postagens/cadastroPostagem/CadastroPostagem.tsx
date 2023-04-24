@@ -86,14 +86,14 @@ function CadastroPostagem() {
     e.preventDefault();
 
     if (id !== undefined) {
-      put(`/postagens`, postagem, setPostagem, {
+      put('/postagens', postagem, setPostagem, {
         headers: {
           Authorization: token,
         },
       });
       alert("Postagem atualizada com sucesso");
     } else {
-      post(`/postagens`, postagem, setPostagem, {
+      post('/postagens', postagem, setPostagem, {
         headers: {
           Authorization: token,
         },
@@ -110,11 +110,11 @@ function CadastroPostagem() {
   return (
     <Grid
       container
-      direction="row"
       justifyContent={"center"}
       alignItems={"center"}
+      style={{padding:'2vw'}}
+      sm={12}
     >
-      <Grid alignItems="center" sm={12}>
         <form onSubmit={onSubmit}>
           <Typography variant="h3" component="h1" align="center">
             Formulário de cadastro postagem
@@ -128,6 +128,7 @@ function CadastroPostagem() {
             name="titulo"
             margin="normal"
             fullWidth
+            style={{marginTop:'2vw'}}
           />
           <TextField
             value={postagem.texto}
@@ -168,7 +169,6 @@ function CadastroPostagem() {
             </Button>
           </FormControl>
         </form>
-      </Grid>
     </Grid>
   );
 }
