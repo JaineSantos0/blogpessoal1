@@ -57,7 +57,7 @@ function ModalPostagem () {
   );
 
   return (
-    <div>
+    <div style={{margin:'5px'}}>
       <Button
         variant="outlined"
         className="btnModal"

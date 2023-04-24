@@ -5,7 +5,7 @@ import { Typography } from '@mui/material';
 import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem';
 import Button from '@mui/material/Button';
 import './Home.css';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
 
@@ -29,11 +29,11 @@ function Home() {
                     <Box textAlign={'center'}>
                         <Typography variant="h3" gutterBottom color="textPrimary" justifyContent={'center'} component="h3" style={{ color: "#C45321", fontWeight: "bold" }}>Seja bem vindo(a) OTAKU!</Typography>
                     </Box>
-                    <Box textAlign={'center'} m={2} >
-                        <ModalPostagem />
-                    </Box>
                     <Box textAlign={'center'}>
-                        <Button variant='outlined' className='button'>Ver Postagens</Button>
+                        <Link to={"/postagens"}>
+                          <Button variant='outlined' className='button'>Ver Postagens</Button>
+                        </Link>
+                        <ModalPostagem />
                     </Box>
                 </Box>
             </Grid>

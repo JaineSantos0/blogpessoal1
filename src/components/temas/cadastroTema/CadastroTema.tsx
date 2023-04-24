@@ -31,7 +31,7 @@ useEffect(() =>{
 }, [id])
 
 async function findById(id: string) {
-    getById(`/tema/${id}`, setTema, {
+   await getById(`/temas/${id}`, setTema, {
         headers: {
           'Authorization': token
         }
@@ -53,19 +53,20 @@ async function findById(id: string) {
 
         if (id !== undefined) {
             console.log(tema)
-            put(`/tema`, tema, setTema, {
+            await put(`/temas`, tema, setTema, {
                 headers: {
                     'Authorization': token
                 }
             })
             alert('Tema atualizado com sucesso');
         } else {
-            post(`/tema`, tema, setTema, {
+           post(`/temas`, tema, setTema, {
                 headers: {
                     'Authorization': token
                 }
             })
             alert('Tema cadastrado com sucesso');
+            history('/temas')
         }
         back()
 
@@ -85,12 +86,12 @@ async function findById(id: string) {
     >
       <Grid alignItems={"center"} xs={12}>
         <Typography component={"h2"} variant="h2">
-          Cadastrar tema
+          {tema.id !== 0 ? 'Editar tema' : 'Cadastrar tema'}
         </Typography>
         <form onSubmit={onSubmit}>
-          <TextField  label="Descrição do tema" name="descricao" value={tema.descricao} onChange={(event: ChangeEvent<HTMLInputElement>) => updateModel(event)} />
+          <TextField  label="Descrição do tema" name="descricao" value={tema.descricao} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedTema(event)} />
           <Button type="submit" variant="contained">
-            Cadastrar
+            {tema.id !== 0 ? 'Atualizar' : 'Cadastrar'}
           </Button>
         </form>
       </Grid>
