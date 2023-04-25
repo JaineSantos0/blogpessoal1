@@ -4,13 +4,15 @@
     background-size: 100%
 }
 
-.button {
-    background-color: blueviolet !important;
+.button-home {
+    background-color: rgb(131, 49, 212) !important;
     color: white !important;
     padding: 5px !important;
     border-radius: 5px !important;
+    width: 10vw;
 }
 
 .postagens {
-    background-color: #b3dee2 !important;
+    background-color: #6682b8 !important;
+    padding: 15px;
 }

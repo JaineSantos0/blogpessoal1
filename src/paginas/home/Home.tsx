@@ -6,13 +6,17 @@ import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem';
 import Button from '@mui/material/Button';
 import './Home.css';
 import { Link, useNavigate } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../store/tokens/TokensReducer';
 
 function Home() {
 
     const history = useNavigate();
-    const [token, setToken] = useLocalStorage('token');
+    
+    const token = useSelector<TokenState, TokenState['token']>(
+        (state) => state.token
+      )
     
     useEffect(() => {
       if (token == "") {
@@ -24,16 +28,18 @@ function Home() {
 
     return(
         <>
-            <Grid className='home'container direction="row" justifyContent="center" alignItems="center" style={{minHeight:'80vh', width:'100%'}}>
-                <Box justifyContent={'center'}>
+            <Grid className='home'container direction="row" justifyContent="center" style={{minHeight:'80vh', width:'100%'}}>
+                <Box>
                     <Box textAlign={'center'}>
-                        <Typography variant="h3" gutterBottom color="textPrimary" justifyContent={'center'} component="h3" style={{ color: "#C45321", fontWeight: "bold" }}>Seja bem vindo(a) OTAKU!</Typography>
+                        <Typography variant="h3" gutterBottom color="textPrimary" justifyContent={'center'} component="h3" style={{ color: "#C45321", fontWeight: "bold", marginTop:'8vh' }}>Seja bem vindo(a) OTAKU!</Typography>
                     </Box>
                     <Box textAlign={'center'}>
+                        <Box alignItems={'center'}>
+                           <ModalPostagem />
+                        </Box>
                         <Link to={"/postagens"}>
-                          <Button variant='outlined' className='button'>Ver Postagens</Button>
+                          <Button variant='outlined' className='button-home'>Ver Postagens</Button>
                         </Link>
-                        <ModalPostagem />
                     </Box>
                 </Box>
             </Grid>

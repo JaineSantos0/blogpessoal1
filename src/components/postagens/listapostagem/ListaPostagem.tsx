@@ -2,16 +2,19 @@ import React, {useState, useEffect} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 import {Box} from '@mui/material';
-import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Postagem';
 import { getAll } from '../../../service/Service';
 import './ListaPostagem.css';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/TokensReducer';
 
 function ListaPostagem() {
 
   const [postagens, setPostagens] = useState<Postagem[]>([])
 
-  const [token, setToken] = useLocalStorage("token");
+  const token = useSelector<TokenState, TokenState['token']>(
+    (state) => state.token
+  )
 
   const history = useNavigate();
 
@@ -34,7 +37,7 @@ function ListaPostagem() {
   }, [postagens.length])
 
   return (
-    <>
+    <div className='listaPost'>
     {postagens.map(postagem => (
       <Box m={2} >
       <Card variant="outlined">
@@ -50,6 +53,9 @@ function ListaPostagem() {
           </Typography>
           <Typography variant="body2" component="p">
             {postagem.tema?.id}
+          </Typography>
+          <Typography variant="body2" component="p">
+            Data: {Intl.DateTimeFormat('pt-BR', {dateStyle: 'full', timeStyle: 'medium'}).format(new Date(postagem.data))}
           </Typography>
         </CardContent>
         <CardActions>
@@ -74,7 +80,7 @@ function ListaPostagem() {
       </Card>
     </Box>
     ))}  
-  </>
+  </div>
   )
 }
 

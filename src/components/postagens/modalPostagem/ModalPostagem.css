@@ -1,9 +1,17 @@
-.cursor{
-    cursor: pointer;
-}
-
 .btnModal{
     border-radius: 5px !important;
     color: white !important;
-    background-color: rgb(13, 16, 160) !important;
+    background-color: rgb(158, 65, 96) !important;
+    width: 10vw;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    background-color: #c4cbe6;
+    width: 25vw;
+    border-radius: 1rem;
 }

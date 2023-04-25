@@ -13,17 +13,24 @@ import {
 import "./CadastroPostagem.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { Tema } from "../../../models/Tema";
-import useLocalStorage from "react-use-localstorage";
 import { Grid } from "@material-ui/core";
 import Postagem from "../../../models/Postagem";
 import { getAll, getById, post, put } from "../../../service/Service";
 import { lightBlue } from "@material-ui/core/colors";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/TokensReducer";
 
 function CadastroPostagem() {
+
   const history = useNavigate();
+
   const { id } = useParams<{ id: string }>();
+
   const [temas, setTemas] = useState<Tema[]>([]);
-  const [token, setToken] = useLocalStorage("token");
+  
+  const token = useSelector<TokenState, TokenState['token']>(
+    (state) => state.token
+  )
 
   useEffect(() => {
     if (token == "") {
@@ -139,6 +146,8 @@ function CadastroPostagem() {
             variant="outlined"
             margin="normal"
             fullWidth
+            minRows={4}
+            multiline
           />
 
           <FormControl>
@@ -164,8 +173,9 @@ function CadastroPostagem() {
               type="submit"
               variant="contained"
               color="primary"
+              disabled= {tema.id === 0}
             >
-              Finalizar
+              {tema.id === 0 ? 'Selecione um tema' : 'Cadastrar'}
             </Button>
           </FormControl>
         </form>

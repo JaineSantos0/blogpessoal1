@@ -40,7 +40,7 @@ function CadastroUsuario() {
 
   async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (confirmarSenha === usuario.senha && usuario.senha.length > 8) {
+    if (confirmarSenha === usuario.senha && usuario.senha.length >= 8) {
       try {
         await cadastrarUsuario(
           "/usuarios/cadastrar",
@@ -79,7 +79,7 @@ function CadastroUsuario() {
       alignItems={"center"}
       className="fundocadastro"
     >
-      <Grid item xs={6} className="imagem"></Grid>
+      <Grid item xs={6} className="imagem-cadastro"></Grid>
       <Grid item xs={6} alignItems={"center"}>
         <Box paddingX={10}>
           <form onSubmit={onSubmit}>

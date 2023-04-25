@@ -1,7 +1,8 @@
-.imagem{
-    background-image: url('https://ik.imagekit.io/wvdiy3mbn/blog-pessoal/cadastro.jpg?updatedAt=1681846030512');
+.imagem-cadastro {
+    background-image: url(https://ik.imagekit.io/wvdiy3mbn/blog-pessoal/demon-slayer-kimetsu-no-yaiba-posters-wallpaper-2048x1536_26.jpg?updatedAt=1682359660978);
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
 }
 
 .button {
