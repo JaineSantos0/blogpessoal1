@@ -5,7 +5,7 @@ import UsuarioLogin from "../../models/UsuarioLogin";
 import { login } from "../../service/Service";
 import "./Login.css";
 import { useDispatch } from "react-redux";
-import { addToken } from "../../store/tokens/Action";
+import { addId, addToken } from "../../store/tokens/Action";
 
 function Login() {
 
@@ -24,6 +24,15 @@ function Login() {
     token: "",
   });
 
+  const [respUserLogin, setRespUserLogin] = useState<UsuarioLogin>({
+    id: 0,
+    nome: "",
+    usuario: "",
+    foto: "",
+    senha: "",
+    token: "",
+  });
+
   function updateModel(event: ChangeEvent<HTMLInputElement>) {
     setUserLogin({
       ...userLogin,
@@ -34,7 +43,7 @@ function Login() {
   async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
     try {
-      await login("/usuarios/logar", userLogin, setToken);
+      await login("/usuarios/logar", userLogin, setRespUserLogin);
       alert("Usuario logado com sucesso");
     } catch (error) {
       console.log(error);
@@ -48,6 +57,14 @@ function Login() {
       history("/home");
     }
   }, [token]);
+
+  useEffect(() => {
+    if(respUserLogin.token !== "") {
+      dispatch(addToken(respUserLogin.token))
+      dispatch(addId(respUserLogin.id.toString()))
+      history('/home')
+    }
+  }, [respUserLogin.token])
 
   return (
     <Grid
@@ -82,6 +99,8 @@ function Login() {
             <TextField
               type="password"
               name="senha"
+              error = {userLogin.senha.length < 8 && userLogin.senha.length > 0}
+              helperText = {userLogin.senha.length < 8 && userLogin.senha.length > 0 ? 'Senha incorreta' : ''}
               value={userLogin.senha}
               onChange={(event: ChangeEvent<HTMLInputElement>) =>
                 updateModel(event)

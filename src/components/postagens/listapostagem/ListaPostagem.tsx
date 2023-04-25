@@ -57,6 +57,9 @@ function ListaPostagem() {
           <Typography variant="body2" component="p">
             Data: {Intl.DateTimeFormat('pt-BR', {dateStyle: 'full', timeStyle: 'medium'}).format(new Date(postagem.data))}
           </Typography>
+          <Typography variant="body2" component="p">
+            Postado por: {postagem.usuario?.nome}
+          </Typography>
         </CardContent>
         <CardActions>
           <Box display="flex" justifyContent="center" mb={1.5}>

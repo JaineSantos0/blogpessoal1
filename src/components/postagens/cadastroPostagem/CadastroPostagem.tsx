@@ -19,6 +19,7 @@ import { getAll, getById, post, put } from "../../../service/Service";
 import { lightBlue } from "@material-ui/core/colors";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/TokensReducer";
+import { Usuario } from "../../../models/Usuario";
 
 function CadastroPostagem() {
 
@@ -27,6 +28,10 @@ function CadastroPostagem() {
   const { id } = useParams<{ id: string }>();
 
   const [temas, setTemas] = useState<Tema[]>([]);
+
+  const userId = useSelector<TokenState, TokenState['id']>(
+    (state) => state.id
+  )
   
   const token = useSelector<TokenState, TokenState['token']>(
     (state) => state.token
@@ -49,12 +54,22 @@ function CadastroPostagem() {
     texto: "",
     data: "",
     tema: null,
+    usuario: null
   });
+
+  const [usuario, setUsuario] = useState<Usuario>({
+    id: +userId,
+    nome: '',
+    usuario: '',
+    senha: '',
+    foto: ''
+  })
 
   useEffect(() => {
     setPostagem({
       ...postagem,
       tema: tema,
+      usuario: usuario
     });
   }, [tema]);
 
