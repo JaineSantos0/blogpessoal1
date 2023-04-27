@@ -13,6 +13,7 @@ import { put } from "../../service/Service";
 import { useDispatch, useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/TokensReducer";
 import { addToken } from "../../store/tokens/Action";
+import { toast } from "react-toastify";
 
 function Navbar() {
   
@@ -26,7 +27,16 @@ function Navbar() {
 
   function goLogout() {
     dispatch(addToken(''));
-    alert("Usuário deslogado");
+    toast.error('Usuário deslogado!', {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
     history("/login");
   }
 
@@ -45,7 +55,7 @@ function Navbar() {
       alignItems={"center"}
     >
       <Box display={"flex"}>
-        <Box marginY={2} className="icon"></Box>
+        <Link to={'/perfil'}><Box marginY={2} className="icon"></Box></Link>
         <Box marginY={4} marginLeft={2}>
           <Typography variant="h6" color="white">Blog de Animes</Typography>
         </Box>

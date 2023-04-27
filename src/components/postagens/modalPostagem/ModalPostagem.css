@@ -10,8 +10,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 1rem;
-    background-color: #c4cbe6;
-    width: 25vw;
-    border-radius: 1rem;
+    background-color: #8e9bce;
+    width: 30vw;
+    height: 100vh;
+    border-radius: 2vw;
 }
