@@ -14,7 +14,6 @@ export const cadastrarUsuario = async(url: string, dados: object, setDados: any)
     setDados(resposta.data)
 }
 
-// a tipagem correta do headers é object pq nele podem ter vários dados
 export const getAll = async(url: any, setDados: any, headers: any) => {
     const resposta = await api.get(url, headers)
     setDados(resposta.data)

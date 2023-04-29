@@ -1,10 +1,10 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { Grid, Box, Typography, TextField, Button } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { Usuario } from "../../models/Usuario";
 import { cadastrarUsuario } from "../../service/Service";
 import "./CadastroUsuario.css";
-import { toast } from "react-toastify";
 
 function CadastroUsuario() {
 
@@ -47,8 +47,8 @@ function CadastroUsuario() {
           "/usuarios/cadastrar",
           usuario,
           setUsuarioResult
-        )
-        toast.success('Usuário cadastrado com sucesso', {
+        );
+        toast.success("Usuário cadastrado com sucesso", {
           position: "top-right",
           autoClose: 3000,
           hideProgressBar: false,
@@ -57,9 +57,9 @@ function CadastroUsuario() {
           draggable: true,
           progress: undefined,
           theme: "colored",
-          });
+        });
       } catch (error) {
-        toast.error('Por favor, verifique os campos!', {
+        toast.error("Por favor, verifique os campos!", {
           position: "top-right",
           autoClose: 3000,
           hideProgressBar: false,
@@ -68,10 +68,10 @@ function CadastroUsuario() {
           draggable: true,
           progress: undefined,
           theme: "colored",
-          });
+        });
       }
     } else {
-      toast.error('As senhas não coincidem!', {
+      toast.error("As senhas não coincidem!", {
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: false,
@@ -80,7 +80,7 @@ function CadastroUsuario() {
         draggable: true,
         progress: undefined,
         theme: "colored",
-        });
+      });
       setConfirmarSenha("");
       setUsuario({
         ...usuario,
@@ -116,7 +116,7 @@ function CadastroUsuario() {
               gutterBottom
               component="h3"
               align="center"
-              style={{ fontWeight: "bold", color:'#283593'}}
+              style={{ fontWeight: "bold", color: "#283593" }}
             >
               Cadastrar
             </Typography>
@@ -124,7 +124,9 @@ function CadastroUsuario() {
               variant="outlined"
               name="nome"
               value={usuario.nome}
-              onChange={(event: ChangeEvent<HTMLInputElement>) => updateModel(event)}
+              onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                updateModel(event)
+              }
               label="Nome completo"
               margin="normal"
               fullWidth
@@ -133,7 +135,9 @@ function CadastroUsuario() {
               variant="outlined"
               name="usuario"
               value={usuario.usuario}
-              onChange={(event: ChangeEvent<HTMLInputElement>) => updateModel(event)}
+              onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                updateModel(event)
+              }
               label="Usuário (endereço de e-mail)"
               margin="normal"
               fullWidth
@@ -142,7 +146,9 @@ function CadastroUsuario() {
               variant="outlined"
               name="foto"
               value={usuario.foto}
-              onChange={(event: ChangeEvent<HTMLInputElement>) => updateModel(event)}
+              onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                updateModel(event)
+              }
               label="Foto (URL)"
               margin="normal"
               fullWidth
@@ -151,8 +157,10 @@ function CadastroUsuario() {
               type="password"
               name="senha"
               value={usuario.senha}
-              onChange={(event: ChangeEvent<HTMLInputElement>) => updateModel(event)}
-              variant="outlined"  
+              onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                updateModel(event)
+              }
+              variant="outlined"
               label="Senha"
               margin="normal"
               fullWidth
@@ -161,19 +169,26 @@ function CadastroUsuario() {
               type="password"
               name="confirmarSenha"
               value={confirmarSenha}
-              onChange={(event: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(event)}
+              onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                confirmarSenhaHandle(event)
+              }
               variant="outlined"
               label="Confirmar Senha"
               margin="normal"
               fullWidth
             ></TextField>
             <Box marginTop={2} textAlign={"center"}>
-                <Button onClick={back} variant="contained" style={{marginRight:'10px'}} className="button">
-                  Cancelar
-                </Button>
-                <Button type="submit" variant="contained" className="button">
-                  Cadastar
-                </Button>
+              <Button
+                onClick={back}
+                variant="contained"
+                style={{ marginRight: "10px" }}
+                className="button"
+              >
+                Cancelar
+              </Button>
+              <Button type="submit" variant="contained" className="button">
+                Cadastar
+              </Button>
             </Box>
           </form>
         </Box>

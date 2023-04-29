@@ -1,16 +1,12 @@
 import React from "react"
-import './Footer.css'
-import { Grid } from '@material-ui/core';
-import GitHubIcon from '@material-ui/icons/GitHub'
-import LinkedinIcon from '@material-ui/icons/Linkedin'
-import Box from '@mui/material/Box';
-import { Typography } from "@mui/material";
+import { Typography, Box, Grid } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
+import GitHubIcon from '@material-ui/icons/GitHub'
+import LinkedinIcon from '@material-ui/icons/Linkedin';
 import { TokenState } from "../../store/tokens/TokensReducer";
+import './Footer.css'
 
 function Footer() {
-
-    const dispatch = useDispatch();
 
     const token = useSelector<TokenState, TokenState['token']>(
         (state) => state.token

@@ -1,30 +1,17 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
-import {
-  Typography,
-  TextField,
-  Button,
-  Select,
-  InputLabel,
-  MenuItem,
-  FormControl,
-  FormHelperText,
-  Container
-} from "@material-ui/core";
-import "./CadastroPostagem.css";
+import {Box, Grid, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
-import { Tema } from "../../../models/Tema";
-import { Grid } from "@material-ui/core";
-import Postagem from "../../../models/Postagem";
-import { getAll, getById, post, put } from "../../../service/Service";
-import { lightBlue } from "@material-ui/core/colors";
 import { useSelector } from "react-redux";
-import { TokenState } from "../../../store/tokens/TokensReducer";
-import { Usuario } from "../../../models/Usuario";
-import Box from "@mui/material/Box";
 import { toast } from "react-toastify";
+import Postagem from "../../../models/Postagem";
+import { Tema } from "../../../models/Tema";
+import { Usuario } from "../../../models/Usuario";
+import { getAll, getById, post, put } from "../../../service/Service";
+import { TokenState } from "../../../store/tokens/TokensReducer";
+import "./CadastroPostagem.css";
 
 function CadastroPostagem() {
-  
+
   const history = useNavigate();
 
   const { id } = useParams<{ id: string }>();
@@ -39,7 +26,7 @@ function CadastroPostagem() {
 
   useEffect(() => {
     if (token == "") {
-      toast.error('Você precisa estar logado!', {
+      toast.error("Você precisa estar logado!", {
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: false,
@@ -48,7 +35,7 @@ function CadastroPostagem() {
         draggable: true,
         progress: undefined,
         theme: "colored",
-        });
+      });
       history("/login");
     }
   }, [token]);
@@ -122,7 +109,7 @@ function CadastroPostagem() {
           Authorization: token,
         },
       });
-      toast.success('Postagem atualizada com sucesso', {
+      toast.success("Postagem atualizada com sucesso", {
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: false,
@@ -131,14 +118,14 @@ function CadastroPostagem() {
         draggable: true,
         progress: undefined,
         theme: "colored",
-        });
+      });
     } else {
       post("/postagens", postagem, setPostagem, {
         headers: {
           Authorization: token,
         },
       });
-      toast.success('Postagem cadastrada com sucesso', {
+      toast.success("Postagem cadastrada com sucesso", {
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: false,
@@ -147,7 +134,7 @@ function CadastroPostagem() {
         draggable: true,
         progress: undefined,
         theme: "colored",
-        });
+      });
     }
     back();
   }
@@ -229,4 +216,5 @@ function CadastroPostagem() {
     </Grid>
   );
 }
+
 export default CadastroPostagem;

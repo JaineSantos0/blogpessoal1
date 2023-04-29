@@ -1,19 +1,13 @@
 import React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
+import {Box, Typography} from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
-import "./Navbar.css";
-import { put } from "../../service/Service";
 import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
+import AppBar from "@mui/material/AppBar";
 import { TokenState } from "../../store/tokens/TokensReducer";
 import { addToken } from "../../store/tokens/Action";
-import { toast } from "react-toastify";
+
+import "./Navbar.css";
 
 function Navbar() {
   

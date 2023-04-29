@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react'
+import {Box, Card, CardActions, CardContent, Button, Typography} from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom'
-import {Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
-import {Box} from '@mui/material';
+import { useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 import {Tema} from '../../../models/Tema'
 import { getAll } from '../../../service/Service';
-import './ListaTema.css';
-import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/TokensReducer';
+import './ListaTema.css';
 
 
 function ListaTema() {
@@ -33,6 +33,16 @@ function ListaTema() {
 
   useEffect(() => {
     if(token === '') {
+      toast.error('Você precisa estar logado!', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
       history('/login')
     }
   }, [])
