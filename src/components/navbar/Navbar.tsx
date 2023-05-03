@@ -48,9 +48,9 @@ function Navbar() {
       justifyContent={"space-between"}
       alignItems={"center"}
     >
-      <Box display={"flex"}>
-        <Link to={'/perfil'}><Box marginY={2} className="icon"></Box></Link>
-        <Box marginY={4} marginLeft={2}>
+      <Box display={'flex'} textAlign={'center'} >
+        <Link to={'/perfil'}><Box textAlign={'center'} className="icon"></Box></Link>
+        <Box m={1}>
           <Typography variant="h6" color="white">Blog de Animes</Typography>
         </Box>
       </Box>

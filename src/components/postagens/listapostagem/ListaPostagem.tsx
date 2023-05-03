@@ -50,7 +50,7 @@ function ListaPostagem() {
     <div className='listaPost'>
     {postagens.map(postagem => (
       <Box m={2} >
-      <Card variant="outlined">
+      <Card variant="outlined" style={{minHeight:'22rem', borderRadius:'3%'}}>
         <CardContent>
           <Typography color="textSecondary" gutterBottom>
             Postagens
@@ -61,8 +61,8 @@ function ListaPostagem() {
           <Typography variant="body2" component="p">
             {postagem.texto}
           </Typography>
-          <Typography variant="body2" component="p">
-            {postagem.tema?.id}
+          <Typography style={{color:'blue'}} variant="body2" component="p">
+            {postagem.tema?.descricao}
           </Typography>
           <Typography variant="body2" component="p">
             Data: {Intl.DateTimeFormat('pt-BR', {dateStyle: 'full', timeStyle: 'medium'}).format(new Date(postagem.data))}
@@ -73,7 +73,6 @@ function ListaPostagem() {
         </CardContent>
         <CardActions>
           <Box display="flex" justifyContent="center" mb={1.5}>
-
             <Link to={`/formularioPostagem/${postagem.id}`} className="text-decorator-none" >
               <Box mx={1}>
                 <Button variant="contained" className="marginLeft" size='small' color="primary" >

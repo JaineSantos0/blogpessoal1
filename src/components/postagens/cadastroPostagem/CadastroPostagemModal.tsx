@@ -8,9 +8,8 @@ import { Tema } from "../../../models/Tema";
 import { Usuario } from "../../../models/Usuario";
 import { getAll, getById, post, put } from "../../../service/Service";
 import { TokenState } from "../../../store/tokens/TokensReducer";
-import "./CadastroPostagem.css";
 
-function CadastroPostagem() {
+function CadastroPostagemModal() {
 
   const history = useNavigate();
 
@@ -145,8 +144,8 @@ function CadastroPostagem() {
   }
 
   return (
-    <Grid container alignItems={"center"} style={{backgroundColor:'#8e9bce'}}>
-      <Grid xs={6} >
+    <Grid container alignItems={"center"}>
+      <Grid xs={12} my={5}>
         <Box className="modal-post">
           <form onSubmit={onSubmit}>
             <Typography variant="h3" component="h1" align="center">
@@ -188,7 +187,7 @@ function CadastroPostagem() {
               variant="outlined"
               margin="normal"
               fullWidth
-              style={{marginBottom:'4%'}}
+              style={{marginBottom:'8%'}}
               minRows={4}
               multiline
             />
@@ -226,11 +225,8 @@ function CadastroPostagem() {
           </form>
         </Box>
       </Grid>
-      <Grid xs={6} className="imagem-postagem">
-        <img className="imagem-postagem" src="https://ik.imagekit.io/wvdiy3mbn/blog-pessoal/Bleach-Season-17-Release-Date-Spoilers-Anime-to-Return-in-2021-with-1000Year-Blood-Arc.jpg?updatedAt=1682466500545" alt="" />
-      </Grid>
     </Grid>
   );
 }
 
-export default CadastroPostagem;
+export default CadastroPostagemModal;

@@ -1,8 +1,9 @@
 import React from "react";
 import { Box, Modal, Button, makeStyles, Theme, createStyles} from "@mui/material";
 import CloseIcon from "@material-ui/icons/Close";
-import CadastroPostagem from "../cadastroPostagem/CadastroPostagem";
+
 import "./ModalPostagem.css";
+import CadastroPostagemModal from "../cadastroPostagem/CadastroPostagemModal";
 
 function ModalPostagem() {
   
@@ -17,7 +18,7 @@ function ModalPostagem() {
   };
 
   const body = (
-    <div>
+    <div >
       <Button variant="outlined" className="btnModal" onClick={handleOpen}>
         Nova Postagem
       </Button>
@@ -31,8 +32,7 @@ function ModalPostagem() {
           <Box display="flex" justifyContent="flex-end">
             <CloseIcon onClick={handleClose} />
           </Box>
-
-          <CadastroPostagem />
+          <CadastroPostagemModal />
         </div>
       </Modal>
     </div>

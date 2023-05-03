@@ -9,6 +9,7 @@ import { TokenState } from "../../store/tokens/TokensReducer";
 import "./Home.css";
 
 function Home() {
+
   const history = useNavigate();
 
   const token = useSelector<TokenState, TokenState["token"]>(
@@ -54,9 +55,7 @@ function Home() {
             </Typography>
           </Box>
           <Box textAlign={"center"}>
-            <Box alignItems={"center"}>
               <ModalPostagem />
-            </Box>
             <Link to={"/postagens"}>
               <Button variant="outlined" className="button-home">
                 Ver Postagens

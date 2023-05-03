@@ -33,16 +33,16 @@ function Perfil() {
   }, []);
 
   return (
-    <>
-      <Container>
-        <Grid container marginTop={5}>
-          <Grid xs={3} alignItems={"center"} justifyContent={"center"}>
+    <> 
+      <Container className="imagem-perfil">
+        <Grid container className="fundo-texto-perfil">
+          <Grid xs={3} alignItems={"center"} justifyContent={"center"} >
             <Avatar
               src={usuario.foto}
               alt=""
-              style={{ width: "15rem", height: "15rem", margin: "0 auto" }}
+              style={{ width: "15rem", height: "15rem", margin:"5vh 0vh 0vh 5vh" }}
             />
-            <Typography variant="h5" align="center">
+            <Typography variant="h5" textAlign={'center'} className="font-perfil">
               {usuario.nome}
             </Typography>
           </Grid>
@@ -50,26 +50,19 @@ function Perfil() {
             <Typography
               variant="h4"
               align="center"
-              style={{ paddingBottom: "4vh" }}
+              style={{ padding: "5vh 0" }}
+              className="font-perfil"
             >
               Postagens de {usuario.nome}
             </Typography>
-            <Typography variant="h6" style={{ paddingBottom: "2vh" }}>
+            <Typography variant="h6" style={{ padding: "0vh 0vh 2vh 3vh" }}>
               Você tem um total de {usuario.postagem?.length} postagens feitas
             </Typography>
             {usuario.postagem?.map((post) => (
-              <Typography style={{ color: "orange", justifyContent: "center" }}>
+              <Typography className="font-perfil" style={{ color: "orange", justifyContent: "center", padding:'0vh 0vh 2vh 3vh' }}>
                 {post.titulo}
               </Typography>
             ))}
-            <Box marginTop={2}>
-              <Button
-                style={{ backgroundColor: "blueviolet" }}
-                variant="contained"
-              >
-                atualizar cadastro
-              </Button>
-            </Box>
           </Grid>
         </Grid>
       </Container>
