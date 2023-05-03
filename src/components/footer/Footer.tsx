@@ -2,7 +2,7 @@ import React from "react"
 import { Typography, Box, Grid } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import GitHubIcon from '@material-ui/icons/GitHub'
-import LinkedinIcon from '@material-ui/icons/Linkedin';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import { TokenState } from "../../store/tokens/TokensReducer";
 import './Footer.css'
 
@@ -28,7 +28,7 @@ function Footer() {
                             </Box>
                             <Box>
                                 <a href="https://www.linkedin.com/in/jainejosiane/"></a>
-                                <LinkedinIcon style={{ fontSize: 50, color: "white", height: "40px"}}/>
+                                <LinkedInIcon style={{ fontSize: 50, color: "white", height: "40px"}}/>
                             </Box>
                         </Box>
                     </Box>

@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import ModalPostagem from "../../components/postagens/modalPostagem/ModalPostagem";
-import TabPostagem from "../../components/postagens/tabpostagem/TabPostagem";
+import TabPostagem from "../../components/postagens/tabPostagem/TabPostagem";
 import { TokenState } from "../../store/tokens/TokensReducer";
 import "./Home.css";
 
